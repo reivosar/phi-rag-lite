@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+*.log
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+*.egg-info/
+
+# VSCode
+.vscode/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# MyPy / Pyright
+.mypy_cache/
+.pyright/
+
+# FastAPI / Uvicorn
+*.pid
+
+# LangChain cache/log
+.cache/
+.cache_langchain/
+
+# Ollama
+ollama/
+*.bin
+
+# Docker
+*.tar
+docker-compose.override.yml
+docker-compose*.env
+**/Dockerfile.*
+**/.dockerignore
+
+# Environment variable files
+.env
+.env.*
+
+# Qdrant
+qdrant_storage/
+qdrant/data/
+
+# App-specific data
+data/*
+!data/.gitkeep
+
+# OS generated
+.DS_Store
+Thumbs.db

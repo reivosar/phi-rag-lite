@@ -1,0 +1,48 @@
+version: "3.9"
+services:
+  ollama:
+    build: ./ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    env_file:
+      - .env
+    volumes:
+      - ./ollama:/root/.ollama
+    networks:
+      - backend
+
+  qdrant:
+    build: ./qdrant
+    container_name: qdrant
+    ports:
+      - "6333:6333"
+    env_file:
+      - .env
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    networks:
+      - backend
+
+  app:
+    build: ./app
+    container_name: app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - ollama
+      - qdrant
+    volumes:
+      - ./data:/app/data
+    networks:
+      - backend
+
+volumes:
+  ollama:
+  qdrant_storage:
+
+networks:
+  backend:
+    driver: bridge
