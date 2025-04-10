@@ -32,8 +32,9 @@ ENV/
 .cache_langchain/
 
 # Ollama
-ollama/
+ollama/models/
 *.bin
+ollama/id*
 
 # Docker
 *.tar
@@ -44,7 +45,6 @@ docker-compose*.env
 
 # Environment variable files
 .env
-.env.*
 
 # Qdrant
 qdrant_storage/
